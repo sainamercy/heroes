@@ -12,6 +12,6 @@ class HeroesController < ApplicationController
 
 
     def not_found
-        render json: { error: 'Restaurant not found' }, status: :not_found
+        render json: { error: 'Heroe not found' }, status: :not_found
     end
 end
