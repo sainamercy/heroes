@@ -106,3 +106,120 @@ Processing by HeroesController#index as */*
 Completed 200 OK in 62ms (Views: 40.8ms | ActiveRecord: 1.2ms | Allocations: 42566)
 
 
+Started GET "/heroes/6" for 127.0.0.1 at 2023-03-24 13:09:19 +0300
+  
+SyntaxError (/home/saina/Development/Moringa-Course-Work/phase-4/code-challenges/heroes/app/controllers/application_controller.rb:7: syntax error, unexpected label
+        render json: message: 'failed', data: { info: exce...
+                     ^~~~~~~~
+/home/saina/Development/Moringa-Course-Work/phase-4/code-challenges/heroes/app/controllers/application_controller.rb:7: syntax error, unexpected ',', expecting `end'
+...render json: message: 'failed', data: { info: exception.mess...
+...                              ^
+/home/saina/Development/Moringa-Course-Work/phase-4/code-challenges/heroes/app/controllers/application_controller.rb:7: syntax error, unexpected ',', expecting `end'
+...a: { info: exception.message }, status: :unprocessable_entity
+...                              ^
+):
+  
+app/controllers/application_controller.rb:7: syntax error, unexpected label
+app/controllers/application_controller.rb:7: syntax error, unexpected ',', expecting `end'
+app/controllers/application_controller.rb:7: syntax error, unexpected ',', expecting `end'
+app/controllers/application_controller.rb:7: syntax error, unexpected label
+app/controllers/application_controller.rb:7: syntax error, unexpected ',', expecting `end'
+app/controllers/application_controller.rb:7: syntax error, unexpected ',', expecting `end'
+app/controllers/heroes_controller.rb:1:in `<main>'
+Started GET "/heroes/6" for 127.0.0.1 at 2023-03-24 13:10:58 +0300
+  
+SyntaxError (/home/saina/Development/Moringa-Course-Work/phase-4/code-challenges/heroes/app/controllers/heroes_controller.rb:5: syntax error, unexpected label
+        render json: data: heroes, status: 200
+                     ^~~~~
+/home/saina/Development/Moringa-Course-Work/phase-4/code-challenges/heroes/app/controllers/heroes_controller.rb:10: syntax error, unexpected label
+        render json: data: heroe, status: 200
+                     ^~~~~
+):
+  
+app/controllers/heroes_controller.rb:5: syntax error, unexpected label
+app/controllers/heroes_controller.rb:10: syntax error, unexpected label
+app/controllers/heroes_controller.rb:5: syntax error, unexpected label
+app/controllers/heroes_controller.rb:10: syntax error, unexpected label
+Started GET "/heroes/6" for 127.0.0.1 at 2023-03-24 13:14:14 +0300
+  
+SyntaxError (/home/saina/Development/Moringa-Course-Work/phase-4/code-challenges/heroes/app/controllers/heroes_controller.rb:5: syntax error, unexpected label
+        render json: data: heroes, status: 200
+                     ^~~~~
+/home/saina/Development/Moringa-Course-Work/phase-4/code-challenges/heroes/app/controllers/heroes_controller.rb:10: syntax error, unexpected label
+        render json: data: heroe, status: 200
+                     ^~~~~
+):
+  
+app/controllers/heroes_controller.rb:5: syntax error, unexpected label
+app/controllers/heroes_controller.rb:10: syntax error, unexpected label
+app/controllers/heroes_controller.rb:5: syntax error, unexpected label
+app/controllers/heroes_controller.rb:10: syntax error, unexpected label
+Started GET "/heroes/6" for 127.0.0.1 at 2023-03-24 13:14:48 +0300
+Processing by HeroesController#show as */*
+  Parameters: {"id"=>"6"}
+Completed 500 Internal Server Error in 9ms (Allocations: 2101)
+
+
+  
+NameError (undefined local variable or method `invalid' for #<HeroesController:0x00000000015428>):
+  
+app/controllers/application_controller.rb:8:in `standard_error'
+Started GET "/heroes/6" for 127.0.0.1 at 2023-03-24 13:15:09 +0300
+Processing by HeroesController#show as */*
+  Parameters: {"id"=>"6"}
+Completed 500 Internal Server Error in 6ms (Allocations: 2350)
+
+
+  
+NoMethodError (undefined method `record' for #<NameError: uninitialized constant HeroesController::Hero>):
+  
+app/controllers/application_controller.rb:8:in `standard_error'
+Started GET "/heroes/6" for 127.0.0.1 at 2023-03-24 13:16:42 +0300
+Processing by HeroesController#show as */*
+  Parameters: {"id"=>"6"}
+Completed 500 Internal Server Error in 3ms (Allocations: 1857)
+
+
+  
+NameError (uninitialized constant HeroesController::Hero):
+  
+app/controllers/heroes_controller.rb:9:in `show'
+Started GET "/heroes/6" for 127.0.0.1 at 2023-03-24 13:17:06 +0300
+Processing by HeroesController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mHeroe Load (0.2ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/heroes_controller.rb:9:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.64ms)
+Completed 200 OK in 17ms (Views: 7.0ms | ActiveRecord: 0.6ms | Allocations: 4901)
+
+
+Started GET "/heroes/67" for 127.0.0.1 at 2023-03-24 13:17:15 +0300
+Processing by HeroesController#show as */*
+  Parameters: {"id"=>"67"}
+  [1m[36mHeroe Load (0.2ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 67], ["LIMIT", 1]]
+  ↳ app/controllers/heroes_controller.rb:9:in `show'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 1075)
+
+
+  
+NoMethodError (undefined method `record' for #<ActiveRecord::RecordNotFound: Couldn't find Heroe with 'id'=67>):
+  
+app/controllers/application_controller.rb:8:in `standard_error'
+Started GET "/heroes/67" for 127.0.0.1 at 2023-03-24 13:24:05 +0300
+Processing by HeroesController#show as */*
+  Parameters: {"id"=>"67"}
+  [1m[36mHeroe Load (0.1ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 67], ["LIMIT", 1]]
+  ↳ app/controllers/heroes_controller.rb:9:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 422 Unprocessable Entity in 8ms (Views: 0.9ms | ActiveRecord: 0.5ms | Allocations: 2251)
+
+
+Started GET "/heroes/67" for 127.0.0.1 at 2023-03-24 13:26:01 +0300
+Processing by HeroesController#show as */*
+  Parameters: {"id"=>"67"}
+  [1m[36mHeroe Load (0.1ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 67], ["LIMIT", 1]]
+  ↳ app/controllers/heroes_controller.rb:9:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 404 Not Found in 8ms (Views: 0.9ms | ActiveRecord: 1.3ms | Allocations: 2608)
+
+
