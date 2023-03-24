@@ -957,3 +957,521 @@ Processing by PowersController#show as */*
 Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 713)
 
 
+Started PATCH "/powers/1" for 127.0.0.1 at 2023-03-24 14:29:28 +0300
+Processing by PowersController#update as */*
+  Parameters: {"name"=>"Reflexes", "description"=>"r consequatur.", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"r consequatur."}}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:13:in `update'
+[31mUnpermitted parameters: :id, :power. Context: { controller: PowersController, action: update, request: #<ActionDispatch::Request:0x000055bcf5218bf0>, params: {"name"=>"Reflexes", "description"=>"r consequatur.", "controller"=>"powers", "action"=>"update", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"r consequatur."}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 422 Unprocessable Entity in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 969)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHeroPowers (20230324113616)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "hero_powers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "strength" integer DEFAULT 0 NOT NULL, "power_id" integer NOT NULL, "heroe_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_1e7d81986f"
+FOREIGN KEY ("power_id")
+  REFERENCES "powers" ("id")
+, CONSTRAINT "fk_rails_6911aed504"
+FOREIGN KEY ("heroe_id")
+  REFERENCES "heroes" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_hero_powers_on_power_id" ON "hero_powers" ("power_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_hero_powers_on_heroe_id" ON "hero_powers" ("heroe_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230324113616"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHeroPowers (20230324113616)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "hero_powers"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20230324113616"]]
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHeroePowers (20230324114121)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "heroe_powers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "strength" integer DEFAULT 0 NOT NULL, "power_id" integer NOT NULL, "heroe_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_f35a4d2419"
+FOREIGN KEY ("power_id")
+  REFERENCES "powers" ("id")
+, CONSTRAINT "fk_rails_ec8fe52297"
+FOREIGN KEY ("heroe_id")
+  REFERENCES "heroes" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_heroe_powers_on_power_id" ON "heroe_powers" ("power_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_heroe_powers_on_heroe_id" ON "heroe_powers" ("heroe_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230324114121"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/heroe_powers" for 127.0.0.1 at 2023-03-24 14:52:31 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/saina/Development/Moringa-Course-Work/phase-4/code-challenges/heroes/app/controllers/heroe_powers_controller.rb:8: syntax error, unexpected local variable or method, expecting `end'
+...ge: 'failed to create' } status: :unprocessable_entity 
+...                         ^~~~~~
+):
+  
+app/controllers/heroe_powers_controller.rb:8: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/heroe_powers_controller.rb:8: syntax error, unexpected local variable or method, expecting `end'
+Started POST "/heroe_powers" for 127.0.0.1 at 2023-03-24 14:53:08 +0300
+Processing by HeroePowersController#create as */*
+  Parameters: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "heroe_power"=>{"strength"=>1, "power_id"=>3, "heroe_id"=>5}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms | Allocations: 1957)
+
+
+  
+NameError (uninitialized constant HeroePowersController::Heroe_power):
+  
+app/controllers/heroe_powers_controller.rb:4:in `create'
+Started POST "/heroe_powers" for 127.0.0.1 at 2023-03-24 14:54:48 +0300
+Processing by HeroePowersController#create as */*
+  Parameters: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "heroe_power"=>{"strength"=>1, "power_id"=>3, "heroe_id"=>5}}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.6ms | Allocations: 2169)
+
+
+  
+NameError (undefined local variable or method `heroe_power_params' for #<HeroePowersController:0x00000000058660>
+Did you mean?  heroe_powers_params
+               heroe_powers_path):
+  
+app/controllers/heroe_powers_controller.rb:4:in `create'
+Started POST "/heroe_powers" for 127.0.0.1 at 2023-03-24 14:55:23 +0300
+Processing by HeroePowersController#create as */*
+  Parameters: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "heroe_power"=>{"strength"=>1, "power_id"=>3, "heroe_id"=>5}}
+[31mUnpermitted parameter: :heroe_power. Context: { controller: HeroePowersController, action: create, request: #<ActionDispatch::Request:0x00007ff2f4368d48>, params: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "controller"=>"heroe_powers", "action"=>"create", "heroe_power"=>{"strength"=>1, "power_id"=>3, "heroe_id"=>5}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+  [1m[36mHeroe Load (0.3ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+  [1m[36mHeroePower Create (0.5ms)[0m  [1m[32mINSERT INTO "heroe_powers" ("strength", "power_id", "heroe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["strength", 1], ["power_id", 3], ["heroe_id", 5], ["created_at", "2023-03-24 11:55:23.365869"], ["updated_at", "2023-03-24 11:55:23.365869"]]
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (9.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 201 Created in 63ms (Views: 1.0ms | ActiveRecord: 12.6ms | Allocations: 27793)
+
+
+Started GET "/heroes" for 127.0.0.1 at 2023-03-24 15:00:52 +0300
+Processing by HeroesController#index as */*
+  Parameters: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "hero"=>{"strength"=>1, "power_id"=>3, "heroe_id"=>5}}
+  [1m[36mHeroe Load (0.3ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes"[0m
+  ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 3]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 4]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 5]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 6]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 7]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 8]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 9]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 10]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 11]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 12]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 13]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 14]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 15]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 16]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 17]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 18]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 19]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 20]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (104.86ms)
+Completed 200 OK in 137ms (Views: 126.4ms | ActiveRecord: 5.4ms | Allocations: 51604)
+
+
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 15:01:20 +0300
+Processing by PowersController#index as */*
+  Parameters: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "power"=>{}}
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (269.14ms)
+Completed 500 Internal Server Error in 273ms (ActiveRecord: 0.3ms | Allocations: 278282)
+
+
+  
+ActiveRecord::HasManyThroughSourceAssociationNotFoundError (Could not find the source association(s) "hero" or :heroes in model HeroePower. Try 'has_many :heroes, :through => :heroe_powers, :source => <name>'. Is it one of power or heroe?):
+  
+app/controllers/powers_controller.rb:4:in `index'
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 15:03:07 +0300
+Processing by PowersController#index as */*
+  Parameters: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "power"=>{}}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.63ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 1682)
+
+
+  
+ActiveRecord::HasManyThroughSourceAssociationNotFoundError (Could not find the source association(s) "hero" or :heroes in model HeroePower. Try 'has_many :heroes, :through => :heroe_powers, :source => <name>'. Is it one of power or heroe?):
+  
+app/controllers/powers_controller.rb:4:in `index'
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 15:04:45 +0300
+Processing by PowersController#index as */*
+  Parameters: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "power"=>{}}
+  [1m[36mPower Load (0.4ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.69ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.0ms | Allocations: 6620)
+
+
+  
+ActiveRecord::HasManyThroughSourceAssociationNotFoundError (Could not find the source association(s) "hero" or :heroes in model HeroePower. Try 'has_many :heroes, :through => :heroe_powers, :source => <name>'. Is it one of power or heroe?):
+  
+app/controllers/powers_controller.rb:4:in `index'
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 15:06:38 +0300
+Processing by PowersController#index as */*
+  Parameters: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "power"=>{}}
+  [1m[36mPower Load (0.4ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.63ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.6ms | Allocations: 6554)
+
+
+  
+ActiveRecord::HasManyThroughSourceAssociationNotFoundError (Could not find the source association(s) "hero" or :heroes in model HeroePower. Try 'has_many :heroes, :through => :heroe_powers, :source => <name>'. Is it one of power or heroe?):
+  
+app/controllers/powers_controller.rb:4:in `index'
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 15:07:17 +0300
+Processing by PowersController#index as */*
+  Parameters: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "power"=>{}}
+  [1m[36mPower Load (0.4ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.23ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.5ms | Allocations: 6528)
+
+
+  
+ActiveRecord::HasManyThroughSourceAssociationNotFoundError (Could not find the source association(s) "hero" or :heroes in model HeroePower. Try 'has_many :heroes, :through => :heroe_powers, :source => <name>'. Is it one of power or heroe?):
+  
+app/controllers/powers_controller.rb:4:in `index'
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 15:07:38 +0300
+Processing by PowersController#index as */*
+  Parameters: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "power"=>{}}
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.07ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.3ms | Allocations: 6674)
+
+
+  
+NoMethodError (undefined method `heroes' for #<Power id: 1, name: "Reflexes", description: "eaque quo minima molestiae modi sequi culpa sit no...", created_at: "2023-03-24 10:48:09.107264000 +0000", updated_at: "2023-03-24 11:09:50.979476000 +0000">):
+  
+app/controllers/powers_controller.rb:4:in `index'
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 15:08:44 +0300
+Processing by PowersController#index as */*
+  Parameters: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "power"=>{}}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (5.14ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.4ms | Allocations: 6552)
+
+
+  
+ActiveRecord::HasManyThroughSourceAssociationNotFoundError (Could not find the source association(s) "hero" or :heroes in model HeroePower. Try 'has_many :heroes, :through => :heroe_powers, :source => <name>'. Is it one of power or heroe?):
+  
+app/controllers/powers_controller.rb:4:in `index'
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 15:11:34 +0300
+Processing by PowersController#index as */*
+  Parameters: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "power"=>{}}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.26ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.7ms | Allocations: 6531)
+
+
+  
+ActiveRecord::HasManyThroughSourceAssociationNotFoundError (Could not find the source association(s) "hero" or :heroes in model HeroePower. Try 'has_many :heroes, :through => :heroe_powers, :source => <name>'. Is it one of power or heroe?):
+  
+app/controllers/powers_controller.rb:4:in `index'
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 15:11:46 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PowersController#index as */*
+  Parameters: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "power"=>{}}
+  [1m[36mPower Load (0.4ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (270.7ms)
+Completed 500 Internal Server Error in 326ms (ActiveRecord: 1.4ms | Allocations: 323372)
+
+
+  
+ActiveRecord::HasManyThroughSourceAssociationNotFoundError (Could not find the source association(s) "hero" or :heroes in model HeroePower. Try 'has_many :heroes, :through => :heroe_powers, :source => <name>'. Is it one of power or heroe?):
+  
+app/controllers/powers_controller.rb:4:in `index'
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 15:15:42 +0300
+Processing by PowersController#index as */*
+  Parameters: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "power"=>{}}
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.02ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.2ms | Allocations: 6600)
+
+
+  
+ActiveRecord::HasManyThroughSourceAssociationNotFoundError (Could not find the source association(s) "hero" or :heroes in model HeroePower. Try 'has_many :heroes, :through => :heroe_powers, :source => <name>'. Is it one of power or heroe?):
+  
+app/controllers/powers_controller.rb:4:in `index'
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 15:18:35 +0300
+Processing by PowersController#index as */*
+  Parameters: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "power"=>{}}
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.24ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.3ms | Allocations: 6557)
+
+
+  
+ActiveRecord::HasManyThroughSourceAssociationNotFoundError (Could not find the source association(s) "hero" or :heroes in model HeroePower. Try 'has_many :heroes, :through => :heroe_powers, :source => <name>'. Is it one of power or heroe?):
+  
+app/controllers/powers_controller.rb:4:in `index'
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 15:18:51 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PowersController#index as */*
+  Parameters: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "power"=>{}}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (271.59ms)
+Completed 500 Internal Server Error in 323ms (ActiveRecord: 0.9ms | Allocations: 323372)
+
+
+  
+ActiveRecord::HasManyThroughSourceAssociationNotFoundError (Could not find the source association(s) "hero" or :heroes in model HeroePower. Try 'has_many :heroes, :through => :heroe_powers, :source => <name>'. Is it one of power or heroe?):
+  
+app/controllers/powers_controller.rb:4:in `index'
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 15:21:17 +0300
+Processing by PowersController#index as */*
+  Parameters: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "power"=>{}}
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.57ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 1.7ms | Allocations: 5535)
+
+
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 15:22:42 +0300
+Processing by PowersController#index as */*
+  Parameters: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "power"=>{}}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mHeroePower Load (0.3ms)[0m  [1m[34mSELECT "heroe_powers".* FROM "heroe_powers" WHERE "heroe_powers"."power_id" = ?[0m  [["power_id", 1]]
+[active_model_serializers]   ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (42.4ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 2.3ms | Allocations: 10422)
+
+
+  
+ActiveRecord::HasManyThroughSourceAssociationNotFoundError (Could not find the source association(s) "hero" or :heroes in model HeroePower. Try 'has_many :heroes, :through => :heroe_powers, :source => <name>'. Is it one of power or heroe?):
+  
+app/controllers/powers_controller.rb:4:in `index'
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 15:23:13 +0300
+Processing by PowersController#index as */*
+  Parameters: {"strength"=>1, "power_id"=>3, "heroe_id"=>5, "power"=>{}}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.14ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 1.1ms | Allocations: 5471)
+
+
+Started GET "/heroe_powers" for 127.0.0.1 at 2023-03-24 15:23:34 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/heroe_powers"):
+  
+Started POST "/heroe_powers" for 127.0.0.1 at 2023-03-24 15:23:45 +0300
+Processing by HeroePowersController#create as */*
+  Parameters: {"strength"=>1, "power_id"=>7, "heroe_id"=>5, "heroe_power"=>{"strength"=>1, "power_id"=>7, "heroe_id"=>5}}
+[31mUnpermitted parameter: :heroe_power. Context: { controller: HeroePowersController, action: create, request: #<ActionDispatch::Request:0x00007f96b412bd38>, params: {"strength"=>1, "power_id"=>7, "heroe_id"=>5, "controller"=>"heroe_powers", "action"=>"create", "heroe_power"=>{"strength"=>1, "power_id"=>7, "heroe_id"=>5}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+  [1m[36mHeroe Load (0.2ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+  [1m[36mHeroePower Create (0.4ms)[0m  [1m[32mINSERT INTO "heroe_powers" ("strength", "power_id", "heroe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["strength", 1], ["power_id", 7], ["heroe_id", 5], ["created_at", "2023-03-24 12:23:45.312675"], ["updated_at", "2023-03-24 12:23:45.312675"]]
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 201 Created in 58ms (Views: 1.9ms | ActiveRecord: 8.7ms | Allocations: 37535)
+
+
+Started POST "/heroes" for 127.0.0.1 at 2023-03-24 15:24:02 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/heroes"):
+  
+Started GET "/heroes" for 127.0.0.1 at 2023-03-24 15:24:08 +0300
+Processing by HeroesController#index as */*
+  Parameters: {"strength"=>1, "power_id"=>7, "heroe_id"=>5, "hero"=>{"strength"=>1, "power_id"=>7, "heroe_id"=>5}}
+  [1m[36mHeroe Load (0.3ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes"[0m
+  ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (2.0ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 3]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 4]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 5]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 6]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 7]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 8]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 9]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 10]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 11]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 12]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 13]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 14]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 15]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 16]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 17]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 18]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 19]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 20]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (81.36ms)
+Completed 200 OK in 88ms (Views: 82.4ms | ActiveRecord: 5.1ms | Allocations: 30852)
+
+
+Started POST "/heroe_powers" for 127.0.0.1 at 2023-03-24 15:27:42 +0300
+Processing by HeroePowersController#create as */*
+  Parameters: {"strength"=>1, "power_id"=>7, "heroe_id"=>45, "heroe_power"=>{"strength"=>1, "power_id"=>7, "heroe_id"=>45}}
+[31mUnpermitted parameter: :heroe_power. Context: { controller: HeroePowersController, action: create, request: #<ActionDispatch::Request:0x00007f96aa08d700>, params: {"strength"=>1, "power_id"=>7, "heroe_id"=>45, "controller"=>"heroe_powers", "action"=>"create", "heroe_power"=>{"strength"=>1, "power_id"=>7, "heroe_id"=>45}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+  [1m[36mHeroe Load (0.1ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 422 Unprocessable Entity in 11ms (Views: 0.7ms | ActiveRecord: 0.7ms | Allocations: 3368)
+
+
+Started POST "/heroe_powers" for 127.0.0.1 at 2023-03-24 15:27:56 +0300
+Processing by HeroePowersController#create as */*
+  Parameters: {"strength"=>1, "power_id"=>7, "heroe_id"=>4, "heroe_power"=>{"strength"=>1, "power_id"=>7, "heroe_id"=>4}}
+[31mUnpermitted parameter: :heroe_power. Context: { controller: HeroePowersController, action: create, request: #<ActionDispatch::Request:0x00007f96a00396c8>, params: {"strength"=>1, "power_id"=>7, "heroe_id"=>4, "controller"=>"heroe_powers", "action"=>"create", "heroe_power"=>{"strength"=>1, "power_id"=>7, "heroe_id"=>4}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+  [1m[36mHeroe Load (0.2ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+  [1m[36mHeroePower Create (0.5ms)[0m  [1m[32mINSERT INTO "heroe_powers" ("strength", "power_id", "heroe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["strength", 1], ["power_id", 7], ["heroe_id", 4], ["created_at", "2023-03-24 12:27:56.416241"], ["updated_at", "2023-03-24 12:27:56.416241"]]
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 201 Created in 28ms (Views: 0.8ms | ActiveRecord: 9.5ms | Allocations: 3918)
+
+
+Started POST "/heroe_powers" for 127.0.0.1 at 2023-03-24 15:29:23 +0300
+Processing by HeroePowersController#create as */*
+  Parameters: {"strength"=>1, "power_id"=>7, "heroe_id"=>4, "heroe_power"=>{"strength"=>1, "power_id"=>7, "heroe_id"=>4}}
+[31mUnpermitted parameter: :heroe_power. Context: { controller: HeroePowersController, action: create, request: #<ActionDispatch::Request:0x00007f96b4b461d8>, params: {"strength"=>1, "power_id"=>7, "heroe_id"=>4, "controller"=>"heroe_powers", "action"=>"create", "heroe_power"=>{"strength"=>1, "power_id"=>7, "heroe_id"=>4}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+  [1m[36mHeroe Load (0.2ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+  [1m[36mHeroePower Create (0.4ms)[0m  [1m[32mINSERT INTO "heroe_powers" ("strength", "power_id", "heroe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["strength", 1], ["power_id", 7], ["heroe_id", 4], ["created_at", "2023-03-24 12:29:23.205466"], ["updated_at", "2023-03-24 12:29:23.205466"]]
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/heroe_powers_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 201 Created in 53ms (Views: 0.8ms | ActiveRecord: 7.1ms | Allocations: 28105)
+
+
+Started GET "/heroes" for 127.0.0.1 at 2023-03-24 15:29:34 +0300
+Processing by HeroesController#index as */*
+  Parameters: {"strength"=>1, "power_id"=>7, "heroe_id"=>4, "hero"=>{"strength"=>1, "power_id"=>7, "heroe_id"=>4}}
+  [1m[36mHeroe Load (0.3ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes"[0m
+  ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 3]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 4]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 5]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 6]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 7]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 8]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 9]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 10]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 11]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 12]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 13]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 14]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 15]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 16]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 17]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 18]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 19]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" INNER JOIN "heroe_powers" ON "powers"."id" = "heroe_powers"."power_id" WHERE "heroe_powers"."heroe_id" = ?[0m  [["heroe_id", 20]]
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (75.65ms)
+Completed 200 OK in 81ms (Views: 77.3ms | ActiveRecord: 3.5ms | Allocations: 30452)
+
+
