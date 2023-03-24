@@ -11,7 +11,12 @@ class PowersController < ApplicationController
 
     def update
         power = Power.find(params[:id]).update(power_params)
-        render json: {message: 'Updated successfully'}, status: 200
+        if power
+            render json: {message: 'Updated successfully'}, status: 200
+        else
+            render json: {message: 'failed', data: { info: 'something went wrong. could not update power' } }, status: :unprocessable_entity
+        end
+        
     end
 
     private

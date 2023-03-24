@@ -838,3 +838,122 @@ Processing by PowersController#show as */*
 Completed 404 Not Found in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 752)
 
 
+Started GET "/powers/56" for 127.0.0.1 at 2023-03-24 14:20:49 +0300
+Processing by PowersController#show as */*
+  Parameters: {"name"=>"Reflexes", "description"=>"eaque .", "id"=>"56", "power"=>{"name"=>"Reflexes", "description"=>"eaque ."}}
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:8:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 404 Not Found in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 625)
+
+
+Started PATCH "/powers/1" for 127.0.0.1 at 2023-03-24 14:21:01 +0300
+Processing by PowersController#update as */*
+  Parameters: {"name"=>"Reflexes", "description"=>"eaque .", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaque ."}}
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:13:in `update'
+[31mUnpermitted parameters: :id, :power. Context: { controller: PowersController, action: update, request: #<ActionDispatch::Request:0x00007ff2e4274640>, params: {"name"=>"Reflexes", "description"=>"eaque .", "controller"=>"powers", "action"=>"update", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaque ."}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 1022)
+
+
+Started PATCH "/powers/1" for 127.0.0.1 at 2023-03-24 14:21:20 +0300
+Processing by PowersController#update as */*
+  Parameters: {"name"=>"Reflexes", "description"=>"", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>""}}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:13:in `update'
+[31mUnpermitted parameters: :id, :power. Context: { controller: PowersController, action: update, request: #<ActionDispatch::Request:0x00007ff2e42d8370>, params: {"name"=>"Reflexes", "description"=>"", "controller"=>"powers", "action"=>"update", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>""}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 956)
+
+
+Started PATCH "/powers/1" for 127.0.0.1 at 2023-03-24 14:21:26 +0300
+Processing by PowersController#update as */*
+  Parameters: {"name"=>"", "description"=>"", "id"=>"1", "power"=>{"name"=>"", "description"=>""}}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:13:in `update'
+[31mUnpermitted parameters: :id, :power. Context: { controller: PowersController, action: update, request: #<ActionDispatch::Request:0x00007ff2e433d180>, params: {"name"=>"", "description"=>"", "controller"=>"powers", "action"=>"update", "id"=>"1", "power"=>{"name"=>"", "description"=>""}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 956)
+
+
+Started GET "/powers/1" for 127.0.0.1 at 2023-03-24 14:21:34 +0300
+Processing by PowersController#show as */*
+  Parameters: {"name"=>"", "description"=>"", "id"=>"1", "power"=>{"name"=>"", "description"=>""}}
+  [1m[36mPower Load (0.4ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:8:in `show'
+[active_model_serializers] Rendered PowerSerializer with ActiveModelSerializers::Adapter::Attributes (0.71ms)
+Completed 200 OK in 7ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 712)
+
+
+Started GET "/powers/1" for 127.0.0.1 at 2023-03-24 14:24:44 +0300
+  
+SyntaxError (/home/saina/Development/Moringa-Course-Work/phase-4/code-challenges/heroes/app/controllers/powers_controller.rb:17: syntax error, unexpected label
+...          render json: message: 'failed', data: { info: 'som...
+...                       ^~~~~~~~
+/home/saina/Development/Moringa-Course-Work/phase-4/code-challenges/heroes/app/controllers/powers_controller.rb:17: syntax error, unexpected ',', expecting `end'
+...render json: message: 'failed', data: { info: 'something wen...
+...                              ^
+/home/saina/Development/Moringa-Course-Work/phase-4/code-challenges/heroes/app/controllers/powers_controller.rb:17: syntax error, unexpected ',', expecting `end'
+...ong. could not update power' }, status: :unprocessable_entity
+...                              ^
+):
+  
+app/controllers/powers_controller.rb:17: syntax error, unexpected label
+app/controllers/powers_controller.rb:17: syntax error, unexpected ',', expecting `end'
+app/controllers/powers_controller.rb:17: syntax error, unexpected ',', expecting `end'
+app/controllers/powers_controller.rb:17: syntax error, unexpected label
+app/controllers/powers_controller.rb:17: syntax error, unexpected ',', expecting `end'
+app/controllers/powers_controller.rb:17: syntax error, unexpected ',', expecting `end'
+Started GET "/powers/1" for 127.0.0.1 at 2023-03-24 14:25:36 +0300
+Processing by PowersController#show as */*
+  Parameters: {"name"=>"", "description"=>"", "id"=>"1", "power"=>{"name"=>"", "description"=>""}}
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:8:in `show'
+[active_model_serializers] Rendered PowerSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 1.0ms | Allocations: 2889)
+
+
+Started POST "/powers/1" for 127.0.0.1 at 2023-03-24 14:25:47 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/powers/1"):
+  
+Started PATCH "/powers/1" for 127.0.0.1 at 2023-03-24 14:25:57 +0300
+Processing by PowersController#update as */*
+  Parameters: {"name"=>"", "description"=>"", "id"=>"1", "power"=>{"name"=>"", "description"=>""}}
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:13:in `update'
+[31mUnpermitted parameters: :id, :power. Context: { controller: PowersController, action: update, request: #<ActionDispatch::Request:0x00007ff2e925c040>, params: {"name"=>"", "description"=>"", "controller"=>"powers", "action"=>"update", "id"=>"1", "power"=>{"name"=>"", "description"=>""}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 422 Unprocessable Entity in 4ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 1318)
+
+
+Started PATCH "/powers/1" for 127.0.0.1 at 2023-03-24 14:26:13 +0300
+Processing by PowersController#update as */*
+  Parameters: {"name"=>"Reflexes", "description"=>"eaqu.", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaqu."}}
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:13:in `update'
+[31mUnpermitted parameters: :id, :power. Context: { controller: PowersController, action: update, request: #<ActionDispatch::Request:0x00007ff2e43ea150>, params: {"name"=>"Reflexes", "description"=>"eaqu.", "controller"=>"powers", "action"=>"update", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaqu."}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 422 Unprocessable Entity in 3ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 968)
+
+
+Started PATCH "/powers/1" for 127.0.0.1 at 2023-03-24 14:26:20 +0300
+Processing by PowersController#update as */*
+  Parameters: {"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur.", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur."}}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:13:in `update'
+[31mUnpermitted parameters: :id, :power. Context: { controller: PowersController, action: update, request: #<ActionDispatch::Request:0x00007ff2f4503a40>, params: {"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur.", "controller"=>"powers", "action"=>"update", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur."}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 960)
+
+
+Started GET "/powers/1" for 127.0.0.1 at 2023-03-24 14:26:27 +0300
+Processing by PowersController#show as */*
+  Parameters: {"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur.", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur."}}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:8:in `show'
+[active_model_serializers] Rendered PowerSerializer with ActiveModelSerializers::Adapter::Attributes (0.57ms)
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 713)
+
+
