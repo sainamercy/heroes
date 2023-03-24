@@ -223,3 +223,618 @@ Processing by HeroesController#show as */*
 Completed 404 Not Found in 8ms (Views: 0.9ms | ActiveRecord: 1.3ms | Allocations: 2608)
 
 
+Started GET "/heroes/67" for 127.0.0.1 at 2023-03-24 13:31:32 +0300
+Processing by HeroesController#show as */*
+  Parameters: {"id"=>"67"}
+  [1m[36mHeroe Load (0.1ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 67], ["LIMIT", 1]]
+  ↳ app/controllers/heroes_controller.rb:9:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 5ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 2231)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePowers (20230324103301)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "powers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "description" text NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230324103301"]]
+  [1m[36mTRANSACTION (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/heroes/20" for 127.0.0.1 at 2023-03-24 13:34:53 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HeroesController#show as */*
+  Parameters: {"id"=>"20"}
+  [1m[36mHeroe Load (0.2ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/heroes_controller.rb:9:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.43ms)
+Completed 200 OK in 9ms (Views: 1.2ms | ActiveRecord: 0.9ms | Allocations: 3713)
+
+
+Started GET "/heroes" for 127.0.0.1 at 2023-03-24 13:35:52 +0300
+Processing by HeroesController#index as */*
+[active_model_serializers]   [1m[36mHeroe Load (0.5ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes"[0m
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.39ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.5ms | Allocations: 3220)
+
+
+Started GET "/heroes" for 127.0.0.1 at 2023-03-24 13:36:28 +0300
+Processing by HeroesController#index as */*
+[active_model_serializers]   [1m[36mHeroe Load (0.2ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes"[0m
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.5ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 3147)
+
+
+Started GET "/heroes" for 127.0.0.1 at 2023-03-24 13:37:40 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HeroesController#index as */*
+[active_model_serializers]   [1m[36mHeroe Load (0.3ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes"[0m
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (22.92ms)
+Completed 200 OK in 42ms (Views: 24.4ms | ActiveRecord: 1.2ms | Allocations: 39953)
+
+
+Started GET "/heroes" for 127.0.0.1 at 2023-03-24 13:39:12 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HeroesController#index as */*
+[active_model_serializers]   [1m[36mHeroe Load (0.3ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes"[0m
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (20.18ms)
+Completed 200 OK in 39ms (Views: 21.1ms | ActiveRecord: 1.0ms | Allocations: 39952)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Magic"], ["description", "Steel"], ["created_at", "2023-03-24 10:41:53.852699"], ["updated_at", "2023-03-24 10:41:53.852699"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Qwardian Power Ring"], ["description", "Vulcan"], ["created_at", "2023-03-24 10:41:53.866353"], ["updated_at", "2023-03-24 10:41:53.866353"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.2ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Gliding"], ["description", "Heat Wave"], ["created_at", "2023-03-24 10:41:53.873575"], ["updated_at", "2023-03-24 10:41:53.873575"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.2ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Cross-Dimensional Travel"], ["description", "Hobgoblin"], ["created_at", "2023-03-24 10:41:53.880221"], ["updated_at", "2023-03-24 10:41:53.880221"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Magic"], ["description", "Doppelganger"], ["created_at", "2023-03-24 10:41:53.887540"], ["updated_at", "2023-03-24 10:41:53.887540"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Vision - X-Ray"], ["description", "Violet"], ["created_at", "2023-03-24 10:41:53.900856"], ["updated_at", "2023-03-24 10:41:53.900856"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Super Speed"], ["description", "Callisto"], ["created_at", "2023-03-24 10:41:53.910679"], ["updated_at", "2023-03-24 10:41:53.910679"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Invulnerability"], ["description", "Darkside"], ["created_at", "2023-03-24 10:41:53.921020"], ["updated_at", "2023-03-24 10:41:53.921020"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Energy Beams"], ["description", "She-Hulk"], ["created_at", "2023-03-24 10:41:53.930618"], ["updated_at", "2023-03-24 10:41:53.930618"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bullet Time"], ["description", "Bantam"], ["created_at", "2023-03-24 10:41:53.941106"], ["updated_at", "2023-03-24 10:41:53.941106"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Thirstokinesis"], ["description", "Beyonder"], ["created_at", "2023-03-24 10:41:53.950291"], ["updated_at", "2023-03-24 10:41:53.950291"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Time Travel"], ["description", "Flash"], ["created_at", "2023-03-24 10:41:53.958564"], ["updated_at", "2023-03-24 10:41:53.958564"]]
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Omnilingualism"], ["description", "Beak"], ["created_at", "2023-03-24 10:41:53.969032"], ["updated_at", "2023-03-24 10:41:53.969032"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Wishing"], ["description", "Warlock"], ["created_at", "2023-03-24 10:41:53.977491"], ["updated_at", "2023-03-24 10:41:53.977491"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Size Changing"], ["description", "Darkstar"], ["created_at", "2023-03-24 10:41:53.986145"], ["updated_at", "2023-03-24 10:41:53.986145"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Radiation Immunity"], ["description", "Gambit"], ["created_at", "2023-03-24 10:41:53.994022"], ["updated_at", "2023-03-24 10:41:53.994022"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Cryokinesis"], ["description", "Lizard"], ["created_at", "2023-03-24 10:41:54.002378"], ["updated_at", "2023-03-24 10:41:54.002378"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Energy Manipulation"], ["description", "Longshot"], ["created_at", "2023-03-24 10:41:54.010751"], ["updated_at", "2023-03-24 10:41:54.010751"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Stamina"], ["description", "Darkhawk"], ["created_at", "2023-03-24 10:41:54.018421"], ["updated_at", "2023-03-24 10:41:54.018421"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Vaporising Beams"], ["description", "Yellow"], ["created_at", "2023-03-24 10:41:54.026086"], ["updated_at", "2023-03-24 10:41:54.026086"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 13:43:39 +0300
+Processing by PowersController#index as */*
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.24ms)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 1.7ms | Allocations: 20594)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePowers (20230324103301)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "powers"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20230324103301"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePowers (20230324103301)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "powers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "description" text NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230324103301"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Reflexes"], ["description", "Dolorum voluptas eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur."], ["created_at", "2023-03-24 10:48:09.107264"], ["updated_at", "2023-03-24 10:48:09.107264"]]
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Molecular Dissipation"], ["description", "Ut itaque voluptatem quas vero dolores voluptate quos et quam numquam sequi consectetur minima necessitatibus reiciendis in similique et iste maiores officia rem commodi dolorum rerum saepe hic et eligendi."], ["created_at", "2023-03-24 10:48:09.118230"], ["updated_at", "2023-03-24 10:48:09.118230"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.2ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Atmokinesis"], ["description", "Nesciunt sed suscipit et optio perspiciatis quas quasi est facere qui laborum consequuntur laudantium sint dolores placeat veniam cum nihil voluptatem culpa ut voluptatibus doloribus aut molestias non provident et."], ["created_at", "2023-03-24 10:48:09.126340"], ["updated_at", "2023-03-24 10:48:09.126340"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Natural Weapons"], ["description", "Et quia voluptate omnis error mollitia commodi omnis voluptatem autem dolorum distinctio ut doloremque vel ipsum quod aut ut deserunt impedit rem est rerum exercitationem rerum quibusdam et optio minus."], ["created_at", "2023-03-24 10:48:09.134328"], ["updated_at", "2023-03-24 10:48:09.134328"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Magic"], ["description", "Aliquam saepe recusandae pariatur et veritatis incidunt officia eaque excepturi impedit qui consequatur distinctio alias rerum aut nemo cumque eos ut voluptas facilis aut architecto qui hic aperiam perferendis soluta."], ["created_at", "2023-03-24 10:48:09.143492"], ["updated_at", "2023-03-24 10:48:09.143492"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Thermokinesis"], ["description", "Architecto dolores sed ea non voluptatem in aut quo facere aut sunt optio consequuntur ut ut eligendi dolorem omnis reprehenderit fugit quas ipsam qui sit inventore temporibus et est fugiat."], ["created_at", "2023-03-24 10:48:09.152640"], ["updated_at", "2023-03-24 10:48:09.152640"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Melting"], ["description", "Et vitae aut mollitia omnis optio accusantium non cupiditate officiis nihil vel est eaque qui quis laborum consectetur omnis voluptates impedit eum dicta ut autem cumque exercitationem dolorem velit tenetur."], ["created_at", "2023-03-24 10:48:09.161588"], ["updated_at", "2023-03-24 10:48:09.161588"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Separation"], ["description", "Voluptatem autem eos dolore et sint molestias ducimus repudiandae alias reprehenderit tenetur sapiente dolorum natus excepturi unde libero recusandae odit atque eum eveniet nostrum doloremque voluptates magnam aut ut quis."], ["created_at", "2023-03-24 10:48:09.170276"], ["updated_at", "2023-03-24 10:48:09.170276"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Vision - Cryo"], ["description", "Rerum expedita et est quo praesentium omnis sed id qui autem quisquam explicabo a corporis nulla tenetur voluptatum sit nisi omnis voluptate officia sed placeat doloremque autem non voluptas temporibus."], ["created_at", "2023-03-24 10:48:09.178460"], ["updated_at", "2023-03-24 10:48:09.178460"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Photokinesis"], ["description", "Esse pariatur deserunt fuga quos unde dolor vel et amet iure exercitationem harum voluptatem est et recusandae perspiciatis at sed excepturi perferendis id officiis et quo veritatis nisi odit et."], ["created_at", "2023-03-24 10:48:09.186333"], ["updated_at", "2023-03-24 10:48:09.186333"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Adaptation"], ["description", "Excepturi sed qui illum laborum nobis eos nihil ab quos impedit et provident quam consequuntur labore vitae voluptate qui asperiores nulla harum delectus iusto maxime deserunt quisquam odit quia blanditiis."], ["created_at", "2023-03-24 10:48:09.194465"], ["updated_at", "2023-03-24 10:48:09.194465"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Physical Anomaly"], ["description", "Ea soluta ipsum veritatis dolor sint odit debitis tenetur saepe quam incidunt tempora magnam tempore occaecati sunt eum non fugit aspernatur molestiae impedit et ab totam quod ipsa esse consectetur."], ["created_at", "2023-03-24 10:48:09.204322"], ["updated_at", "2023-03-24 10:48:09.204322"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Grim Reaping"], ["description", "Eos natus ut eligendi iusto ullam dolores porro aut id reiciendis quisquam totam atque facere asperiores unde fugit voluptas ducimus explicabo aut est et laborum a blanditiis enim cum maiores."], ["created_at", "2023-03-24 10:48:09.213575"], ["updated_at", "2023-03-24 10:48:09.213575"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Vision - Infrared"], ["description", "Neque deserunt rem dolores sed eos ut voluptates vero consectetur temporibus ea assumenda ad in maiores et est occaecati ut officiis incidunt consequatur repellat et quod tempora minus quo quia."], ["created_at", "2023-03-24 10:48:09.222826"], ["updated_at", "2023-03-24 10:48:09.222826"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Heat Generation"], ["description", "Repellendus et distinctio sed ea excepturi quis molestiae qui mollitia sunt cupiditate iste cum quaerat laboriosam ab praesentium minus dignissimos quae quia provident dolorem libero ut impedit ut cumque eum."], ["created_at", "2023-03-24 10:48:09.231625"], ["updated_at", "2023-03-24 10:48:09.231625"]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Wallcrawling"], ["description", "Ut aut distinctio deserunt provident ut voluptate modi dolore id voluptatem ut a ipsam pariatur enim eos et rerum totam culpa error nihil nostrum exercitationem et aliquid molestias iusto sit."], ["created_at", "2023-03-24 10:48:09.241658"], ["updated_at", "2023-03-24 10:48:09.241658"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Energy Manipulation"], ["description", "Minus architecto reprehenderit libero non molestiae error facilis consequatur voluptatem totam ipsam odio in odit tempore aut ratione rem eaque qui at cumque optio quia eos autem blanditiis nesciunt voluptas."], ["created_at", "2023-03-24 10:48:09.250896"], ["updated_at", "2023-03-24 10:48:09.250896"]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Vision - Cryo"], ["description", "Deserunt molestias minima distinctio tempore ipsam nihil labore consequatur veritatis saepe ex quibusdam alias eligendi quas facilis ut laboriosam velit minus aut quod rerum ullam deleniti molestiae neque aut aliquam."], ["created_at", "2023-03-24 10:48:09.262872"], ["updated_at", "2023-03-24 10:48:09.262872"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.4ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Biokinesis"], ["description", "Exercitationem magni nostrum eaque aperiam natus quaerat a et qui ducimus assumenda omnis doloribus nisi non sed et placeat minima earum ad veritatis dignissimos dolore impedit aut tempore officia enim."], ["created_at", "2023-03-24 10:48:09.272642"], ["updated_at", "2023-03-24 10:48:09.272642"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPower Create (0.3ms)[0m  [1m[32mINSERT INTO "powers" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Invulnerability"], ["description", "Mollitia enim non totam eligendi consequatur nam corrupti blanditiis rem eos ab ut provident facere ratione molestias rerum fuga sed voluptatem consequatur adipisci rerum itaque doloremque iure et laudantium voluptatem."], ["created_at", "2023-03-24 10:48:09.282076"], ["updated_at", "2023-03-24 10:48:09.282076"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 13:48:13 +0300
+Processing by PowersController#index as */*
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.67ms)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 1.3ms | Allocations: 6630)
+
+
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 13:51:12 +0300
+Processing by PowersController#index as */*
+Completed 500 Internal Server Error in 1ms (Allocations: 268)
+
+
+  
+SyntaxError (/home/saina/Development/Moringa-Course-Work/phase-4/code-challenges/heroes/app/models/power.rb:2: syntax error, unexpected ':', expecting `end'
+    validates: :description {
+             ^
+/home/saina/Development/Moringa-Course-Work/phase-4/code-challenges/heroes/app/models/power.rb:3: Can't assign to true
+        presence: true,
+                  ^~~~
+):
+  
+app/models/power.rb:2: syntax error, unexpected ':', expecting `end'
+app/models/power.rb:3: Can't assign to true
+app/models/power.rb:2: syntax error, unexpected ':', expecting `end'
+app/models/power.rb:3: Can't assign to true
+app/controllers/powers_controller.rb:3:in `index'
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 13:51:28 +0300
+Processing by PowersController#index as */*
+Completed 500 Internal Server Error in 1ms (Allocations: 254)
+
+
+  
+SyntaxError (/home/saina/Development/Moringa-Course-Work/phase-4/code-challenges/heroes/app/models/power.rb:2: syntax error, unexpected '{', expecting `end'
+    validates :description {
+                           ^
+/home/saina/Development/Moringa-Course-Work/phase-4/code-challenges/heroes/app/models/power.rb:3: Can't assign to true
+        presence: true,
+                  ^~~~
+):
+  
+app/models/power.rb:2: syntax error, unexpected '{', expecting `end'
+app/models/power.rb:3: Can't assign to true
+app/models/power.rb:2: syntax error, unexpected '{', expecting `end'
+app/models/power.rb:3: Can't assign to true
+app/controllers/powers_controller.rb:3:in `index'
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 13:54:54 +0300
+Processing by PowersController#index as */*
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.84ms)
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 1.3ms | Allocations: 6769)
+
+
+Started GET "/heroes" for 127.0.0.1 at 2023-03-24 13:56:35 +0300
+Processing by HeroesController#index as */*
+[active_model_serializers]   [1m[36mHeroe Load (0.4ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes"[0m
+[active_model_serializers]   ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (17.25ms)
+Completed 200 OK in 26ms (Views: 16.9ms | ActiveRecord: 1.3ms | Allocations: 5636)
+
+
+Started GET "/heroes" for 127.0.0.1 at 2023-03-24 13:57:31 +0300
+Processing by HeroesController#index as */*
+  [1m[36mHeroe Load (0.1ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes"[0m
+  ↳ app/controllers/heroes_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.89ms)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 1.3ms | Allocations: 6574)
+
+
+Started GET "/heroes/7" for 127.0.0.1 at 2023-03-24 13:57:40 +0300
+Processing by HeroesController#show as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mHeroe Load (0.2ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/heroes_controller.rb:9:in `show'
+[active_model_serializers] Rendered HeroeSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 1986)
+
+
+Started GET "/heroes/90" for 127.0.0.1 at 2023-03-24 13:57:45 +0300
+Processing by HeroesController#show as */*
+  Parameters: {"id"=>"90"}
+  [1m[36mHeroe Load (0.1ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 90], ["LIMIT", 1]]
+  ↳ app/controllers/heroes_controller.rb:9:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 404 Not Found in 3ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 778)
+
+
+Started GET "/heroes/9" for 127.0.0.1 at 2023-03-24 13:57:49 +0300
+Processing by HeroesController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mHeroe Load (0.1ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/heroes_controller.rb:9:in `show'
+[active_model_serializers] Rendered HeroeSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 709)
+
+
+Started GET "/powers/9" for 127.0.0.1 at 2023-03-24 13:58:07 +0300
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for PowersController):
+  
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/powers/4" for 127.0.0.1 at 2023-03-24 13:58:28 +0300
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for PowersController):
+  
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/powers/4" for 127.0.0.1 at 2023-03-24 13:58:54 +0300
+Processing by PowersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mHeroe Load (0.1ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:8:in `show'
+[active_model_serializers] Rendered HeroeSerializer with ActiveModelSerializers::Adapter::Attributes (0.36ms)
+Completed 200 OK in 11ms (Views: 1.9ms | ActiveRecord: 1.3ms | Allocations: 4086)
+
+
+Started GET "/powers/40" for 127.0.0.1 at 2023-03-24 13:58:59 +0300
+Processing by PowersController#show as */*
+  Parameters: {"id"=>"40"}
+  [1m[36mHeroe Load (0.3ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:8:in `show'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.3ms | Allocations: 623)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Heroe with 'id'=40):
+  
+app/controllers/powers_controller.rb:8:in `show'
+Started GET "/powers/40" for 127.0.0.1 at 2023-03-24 14:00:18 +0300
+Processing by PowersController#show as */*
+  Parameters: {"id"=>"40"}
+  [1m[36mHeroe Load (0.2ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:8:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 404 Not Found in 8ms (Views: 1.1ms | ActiveRecord: 1.3ms | Allocations: 2599)
+
+
+Started GET "/powers/40" for 127.0.0.1 at 2023-03-24 14:01:35 +0300
+Processing by PowersController#show as */*
+  Parameters: {"id"=>"40"}
+  [1m[36mHeroe Load (0.1ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:8:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 404 Not Found in 8ms (Views: 1.0ms | ActiveRecord: 1.3ms | Allocations: 2600)
+
+
+Started GET "/heroes/40" for 127.0.0.1 at 2023-03-24 14:02:00 +0300
+Processing by HeroesController#show as */*
+  Parameters: {"id"=>"40"}
+  [1m[36mHeroe Load (0.3ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/heroes_controller.rb:9:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 404 Not Found in 5ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 877)
+
+
+Started GET "/heroes/4" for 127.0.0.1 at 2023-03-24 14:06:00 +0300
+Processing by HeroesController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mHeroe Load (0.1ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/heroes_controller.rb:9:in `show'
+[active_model_serializers] Rendered HeroeSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 10ms (Views: 1.6ms | ActiveRecord: 1.1ms | Allocations: 4087)
+
+
+Started GET "/powers/4" for 127.0.0.1 at 2023-03-24 14:06:34 +0300
+Processing by PowersController#show as */*
+  Parameters: {"name"=>"Denny Morissette", "super_name"=>"Genesis Knight", "id"=>"4", "power"=>{"name"=>"Denny Morissette"}}
+  [1m[36mHeroe Load (0.1ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:8:in `show'
+[active_model_serializers] Rendered HeroeSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.5ms | Allocations: 931)
+
+
+Started GET "/powers/4" for 127.0.0.1 at 2023-03-24 14:06:41 +0300
+Processing by PowersController#show as */*
+  Parameters: {"name"=>"Denny Morissette", "super_name"=>"Genesis Knight", "id"=>"4", "power"=>{"name"=>"Denny Morissette"}}
+  [1m[36mHeroe Load (0.2ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:8:in `show'
+[active_model_serializers] Rendered HeroeSerializer with ActiveModelSerializers::Adapter::Attributes (0.37ms)
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 709)
+
+
+Started GET "/powers/4" for 127.0.0.1 at 2023-03-24 14:06:43 +0300
+Processing by PowersController#show as */*
+  Parameters: {"name"=>"Denny Morissette", "super_name"=>"Genesis Knight", "id"=>"4", "power"=>{"name"=>"Denny Morissette"}}
+  [1m[36mHeroe Load (0.1ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:8:in `show'
+[active_model_serializers] Rendered HeroeSerializer with ActiveModelSerializers::Adapter::Attributes (0.5ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.1ms | Allocations: 710)
+
+
+Started GET "/powers/4" for 127.0.0.1 at 2023-03-24 14:06:54 +0300
+Processing by PowersController#show as */*
+  Parameters: {"name"=>"Denny Morissette", "super_name"=>"Genesis Knight", "id"=>"4", "power"=>{"name"=>"Denny Morissette"}}
+  [1m[36mHeroe Load (0.2ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:8:in `show'
+[active_model_serializers] Rendered HeroeSerializer with ActiveModelSerializers::Adapter::Attributes (0.29ms)
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 710)
+
+
+Started GET "/powers" for 127.0.0.1 at 2023-03-24 14:07:01 +0300
+Processing by PowersController#index as */*
+  Parameters: {"name"=>"Denny Morissette", "super_name"=>"Genesis Knight", "power"=>{"name"=>"Denny Morissette"}}
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers"[0m
+  ↳ app/controllers/powers_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.94ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.7ms | Allocations: 5308)
+
+
+Started GET "/powers/1" for 127.0.0.1 at 2023-03-24 14:07:13 +0300
+Processing by PowersController#show as */*
+  Parameters: {"name"=>"Denny Morissette", "super_name"=>"Genesis Knight", "id"=>"1", "power"=>{"name"=>"Denny Morissette"}}
+  [1m[36mHeroe Load (0.1ms)[0m  [1m[34mSELECT "heroes".* FROM "heroes" WHERE "heroes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:8:in `show'
+[active_model_serializers] Rendered HeroeSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 811)
+
+
+Started GET "/powers/1" for 127.0.0.1 at 2023-03-24 14:09:13 +0300
+Processing by PowersController#show as */*
+  Parameters: {"name"=>"Denny Morissette", "super_name"=>"Genesis Knight", "id"=>"1", "power"=>{"name"=>"Denny Morissette"}}
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:8:in `show'
+[active_model_serializers] Rendered PowerSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 1.2ms | Allocations: 2890)
+
+
+Started PATCH "/powers/1" for 127.0.0.1 at 2023-03-24 14:09:50 +0300
+Processing by PowersController#update as */*
+  Parameters: {"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur.", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur."}}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:13:in `update'
+[31mUnpermitted parameters: :id, :power. Context: { controller: PowersController, action: update, request: #<ActionDispatch::Request:0x00007ff2f8e39e08>, params: {"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur.", "controller"=>"powers", "action"=>"update", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur."}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/powers_controller.rb:13:in `update'
+  [1m[36mPower Update (0.4ms)[0m  [1m[33mUPDATE "powers" SET "description" = ?, "updated_at" = ? WHERE "powers"."id" = ?[0m  [["description", "eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur."], ["updated_at", "2023-03-24 11:09:50.979476"], ["id", 1]]
+  ↳ app/controllers/powers_controller.rb:13:in `update'
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/powers_controller.rb:13:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with TrueClass (0.09ms)
+Completed 200 OK in 20ms (Views: 0.7ms | ActiveRecord: 10.6ms | Allocations: 3464)
+
+
+Started PATCH "/powers/1" for 127.0.0.1 at 2023-03-24 14:11:30 +0300
+Processing by PowersController#update as */*
+  Parameters: {"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur.", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur."}}
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:13:in `update'
+[31mUnpermitted parameters: :id, :power. Context: { controller: PowersController, action: update, request: #<ActionDispatch::Request:0x00007ff2d80c3640>, params: {"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur.", "controller"=>"powers", "action"=>"update", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur."}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with TrueClass (0.06ms)
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 1.3ms | Allocations: 2963)
+
+
+Started PATCH "/powers/1" for 127.0.0.1 at 2023-03-24 14:12:03 +0300
+  
+SyntaxError (/home/saina/Development/Moringa-Course-Work/phase-4/code-challenges/heroes/app/controllers/powers_controller.rb:14: syntax error, unexpected label
+        render json: data: power, status: 200
+                     ^~~~~
+):
+  
+app/controllers/powers_controller.rb:14: syntax error, unexpected label
+app/controllers/powers_controller.rb:14: syntax error, unexpected label
+Started PATCH "/powers/1" for 127.0.0.1 at 2023-03-24 14:12:38 +0300
+Processing by PowersController#update as */*
+  Parameters: {"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur.", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur."}}
+  [1m[36mPower Load (0.1ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:13:in `update'
+[31mUnpermitted parameters: :id, :power. Context: { controller: PowersController, action: update, request: #<ActionDispatch::Request:0x00007ff2e4106da8>, params: {"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur.", "controller"=>"powers", "action"=>"update", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur."}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 8ms (Views: 0.9ms | ActiveRecord: 1.2ms | Allocations: 2978)
+
+
+Started PATCH "/powers/1" for 127.0.0.1 at 2023-03-24 14:13:05 +0300
+Processing by PowersController#update as */*
+  Parameters: {"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur.", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur."}}
+  [1m[36mPower Load (0.3ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:13:in `update'
+[31mUnpermitted parameters: :id, :power. Context: { controller: PowersController, action: update, request: #<ActionDispatch::Request:0x00007ff2f426fa18>, params: {"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur.", "controller"=>"powers", "action"=>"update", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur."}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with TrueClass (0.09ms)
+Completed 200 OK in 8ms (Views: 1.0ms | ActiveRecord: 1.1ms | Allocations: 2957)
+
+
+Started PATCH "/powers/1" for 127.0.0.1 at 2023-03-24 14:14:46 +0300
+Processing by PowersController#update as */*
+  Parameters: {"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur.", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur."}}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:13:in `update'
+[31mUnpermitted parameters: :id, :power. Context: { controller: PowersController, action: update, request: #<ActionDispatch::Request:0x00007ff2d8446678>, params: {"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur.", "controller"=>"powers", "action"=>"update", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur."}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 1.1ms | Allocations: 2970)
+
+
+Started PATCH "/powers/1" for 127.0.0.1 at 2023-03-24 14:15:03 +0300
+Processing by PowersController#update as */*
+  Parameters: {"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur.", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur."}}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:13:in `update'
+[31mUnpermitted parameters: :id, :power. Context: { controller: PowersController, action: update, request: #<ActionDispatch::Request:0x00007ff2e8f88058>, params: {"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur.", "controller"=>"powers", "action"=>"update", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur."}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 8ms (Views: 0.9ms | ActiveRecord: 1.3ms | Allocations: 2978)
+
+
+Started GET "/powers/1" for 127.0.0.1 at 2023-03-24 14:15:15 +0300
+Processing by PowersController#show as */*
+  Parameters: {"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur.", "id"=>"1", "power"=>{"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur."}}
+  [1m[36mPower Load (0.4ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:8:in `show'
+[active_model_serializers] Rendered PowerSerializer with ActiveModelSerializers::Adapter::Attributes (1.01ms)
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 0.4ms | Allocations: 1136)
+
+
+Started GET "/powers/56" for 127.0.0.1 at 2023-03-24 14:15:35 +0300
+Processing by PowersController#show as */*
+  Parameters: {"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur.", "id"=>"56", "power"=>{"name"=>"Reflexes", "description"=>"eaque quo minima molestiae modi sequi culpa sit nobis amet odit nihil et et quisquam corporis sint incidunt eveniet ut aut vero vitae ut eligendi eum dolor consequatur."}}
+  [1m[36mPower Load (0.2ms)[0m  [1m[34mSELECT "powers".* FROM "powers" WHERE "powers"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/powers_controller.rb:8:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 404 Not Found in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 752)
+
+
