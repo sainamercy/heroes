@@ -4,7 +4,7 @@ This is a simple web API for SuperHeroes and their respective powers
 
 ## API live link
 
-- []()
+- [https://heroes-nuqo.onrender.com](https://heroes-nuqo.onrender.com)
 
     - use the provided endpoints on the `ROUTES` section to test the API.
 
@@ -59,7 +59,7 @@ This application is a simple web API that allows users to:
 
 Database schema definitions and associations.
 
-![pizzas-ERD](./screens/heroes.png)
+![heroes-ERD](./screens/heroes.png)
 
 
 
