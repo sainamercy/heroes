@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::API
-    rescue_from ActiveRecord::RecordNotFound, with: :not_found
+    rescue_from StandardError, with: :standard_error
 
-    def not_found
-        render json: { error: 'not found' }, status: :not_found
+     # rescue all common errors
+     def standard_error(exception)
+        render json: {message: 'failed', data: { info: exception.message }}, status: :unprocessable_entity
     end
 end

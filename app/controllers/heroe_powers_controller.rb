@@ -3,7 +3,7 @@ class HeroePowersController < ApplicationController
     def create
         heroe_power =HeroePower.create(heroe_power_params)
         if heroe_power.valid?
-            render json: { message: 'successfully created'}, status: :created
+            render json: { message: 'successfully created', data: heroe_power}, status: :created
         else
             render json: { message: 'failed to create' }, status: :unprocessable_entity 
         end    

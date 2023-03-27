@@ -1,4 +1,6 @@
 class PowersController < ApplicationController
+    rescue_from ActiveRecord::RecordNotFound, with: :not_found
+    
     def index
         powers = Power.all
         render json: powers, status: 200
@@ -23,5 +25,9 @@ class PowersController < ApplicationController
 
     def power_params
         params.permit(:description, :name)
+    end
+
+    def not_found
+        render json: { error: 'Power not found' }, status: :not_found
     end
 end
